@@ -1,7 +1,9 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 
-send($_POST['sender_id']);
+$data = json_decode(file_get_contents('php://input'), true);
+
+send($data['sender_id']);
 
 if(strpos($_POST['name'], 'Marcus') || strpos($_POST['name'], 'marcus')){
     send('SHUT UP MARCUS');
