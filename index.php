@@ -41,7 +41,7 @@ if(!(strpos($inputMsg['text'], 'iShana') === false) || !(strpos($inputMsg['text'
 }
 
 //if anyone mentions the moon or lunar
-if(!(strpos($inputMsg['text'], 'moon') === false) || !(strpos($inputMsg['text'], 'lunar') === false){
+if(!(strpos($inputMsg['text'], 'moon') === false) || !(strpos($inputMsg['text'], 'lunar') === false)){
     $text = "That's one small step for man, one giant leap for mankind.";
     send($text);
 }
