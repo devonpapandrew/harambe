@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 
+send('hello world');
 
 if(strpos($_POST['name'], 'Marcus') || strpos($_POST['name'], 'marcus')){
     send('SHUT UP MARCUS');
