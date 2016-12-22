@@ -34,14 +34,20 @@ if($inputMsg['sender_id'] == 198370909){
     send('SHUT UP MARCUS');
 }
 
+//if anyone mentions the iShana, Ishana, or ishana
+if(!(strpos($inputMsg['text'], 'iShana') === false) || !(strpos($inputMsg['text'], 'Ishana') === false)  || !(strpos($inputMsg['text'], 'ishana') === false)){
+    $text = "That's one small step for man, one giant leap for mankind.";
+    send($text);
+}
+
 //if anyone mentions the moon or lunar
-if(strpos($inputMsg['text'], 'moon') || strpos($inputMsg['text'], 'lunar')){
+if(!(strpos($inputMsg['text'], 'moon') === false) || !(strpos($inputMsg['text'], 'lunar') === false){
     $text = "That's one small step for man, one giant leap for mankind.";
     send($text);
 }
 
 //if anyone mentions lauren
-if(strpos($inputMsg['text'], 'lauren') || strpos($_POST['text'], 'Lauren')){
+if(!(strpos($inputMsg['text'], 'lauren') === false) || !(strpos($inputMsg['text'], 'Lauren') === false)){
     $text = "smh lauren lol";
     send($text);
 }
