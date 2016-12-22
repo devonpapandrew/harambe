@@ -23,12 +23,13 @@ $inputMsg = json_decode(file_get_contents('php://input'), true);
 
 */
 
-send('devon');
-
 //Kill the process if the last msg sent was from this bot
 if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
     exit;
 }
+
+send('devon');
+
 
 if(strpos($inputMsg['name'], 'Marcus') || strpos($inputMsg['name'], 'marcus')){
     send('SHUT UP MARCUS');
