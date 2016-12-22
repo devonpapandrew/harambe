@@ -33,7 +33,7 @@ if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
 
 
 //if bitch-ass Marcus says anything
-if(intval($inputMsg['sender_id']) == 198370909 || !(strpos($inputMsg['name'], 'Marcus') === false) || !(strpos($inputMsg['name'], 'marcus') === false)){
+if(intval($inputMsg['sender_id']) == 7648679 || !(strpos($inputMsg['name'], 'Marcus') === false) || !(strpos($inputMsg['name'], 'marcus') === false)){
     send('SHUT UP MARCUS');
 }
 
