@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 
 if(strpos($_POST['name'], 'Marcus') || strpos($_POST['name'], 'marcus')){
