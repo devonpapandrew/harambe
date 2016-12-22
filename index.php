@@ -25,18 +25,19 @@ $inputMsg = json_decode(file_get_contents('php://input'), true);
 
 
 //Kill the process if the last msg sent was from this bot
+//Lol this got us in an infinite loop
 if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
     exit;
 }
 
-//if Marcus says anything
+//if bitch-ass Marcus says anything
 if($inputMsg['sender_id'] == 198370909){
     send('SHUT UP MARCUS');
 }
 
 //if anyone mentions the iShana, Ishana, or ishana
 if(!(strpos($inputMsg['text'], 'iShana') === false) || !(strpos($inputMsg['text'], 'Ishana') === false)  || !(strpos($inputMsg['text'], 'ishana') === false)){
-    $text = "That's one small step for man, one giant leap for mankind.";
+    $text = "Get it Rohan!";
     send($text);
 }
 
