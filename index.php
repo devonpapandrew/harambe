@@ -69,6 +69,12 @@ if(!(strpos($inputMsg['text'], 'harambe') === false) || !(strpos($inputMsg['text
     exit;
 }
 
+//if anyone mentions mars or Mars
+if(!(strpos($inputMsg['text'], 'mars') === false) || !(strpos($inputMsg['text'], 'Mars') === false)){
+    send("Potatoes!");
+    exit;
+}
+
 $rand = rand(0,100);
 if($rand <+ 10){
     send("If you strike me down, I will become more powerful than you can possibly imagine.");
