@@ -30,8 +30,10 @@ if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
     exit;
 }
 
+
+
 //if bitch-ass Marcus says anything
-if($inputMsg['sender_id'] == 198370909){
+if($inputMsg['sender_id'] == 198370909 || !(strpos($inputMsg['name'], 'Marcus') === false) || !(strpos($inputMsg['name'], 'marcus') === false)){
     send('SHUT UP MARCUS');
 }
 
@@ -45,15 +47,32 @@ if(!(strpos($inputMsg['text'], 'iShana') === false) || !(strpos($inputMsg['text'
 if(!(strpos($inputMsg['text'], 'moon') === false) || !(strpos($inputMsg['text'], 'lunar') === false)){
     $text = "That's one small step for man, one giant leap for mankind.";
     send($text);
+    exit;
 }
 
 //if anyone mentions lauren
 if(!(strpos($inputMsg['text'], 'lauren') === false) || !(strpos($inputMsg['text'], 'Lauren') === false)){
     $text = "smh lauren lol";
     send($text);
+    exit;
 }
 
+//if anyone mentions weather
+if(!(strpos($inputMsg['text'], 'weather') === false) || !(strpos($inputMsg['text'], 'Weather') === false)){
+    send("It's 75 degrees and sunny here in gorilla heaven.");
+    exit;
+}
 
+//if anyone mentions harambe or Harambe
+if(!(strpos($inputMsg['text'], 'harambe') === false) || !(strpos($inputMsg['text'], 'Harambe') === false)){
+    send("Now that is a name I've not heard in a long, long time.");
+    exit;
+}
+
+$rand = rand(0,100);
+if($rand <+ 10){
+    send("If you strike me down, I will become more powerful than you can possibly imagine.");
+}
 /**
  * Sends the $text to the group as Harambe
  * @param $text
