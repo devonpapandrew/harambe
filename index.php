@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 
-send('hello world');
+send($_POST['sender_id']);
 
 if(strpos($_POST['name'], 'Marcus') || strpos($_POST['name'], 'marcus')){
     send('SHUT UP MARCUS');
@@ -18,17 +18,6 @@ if(strpos($_POST['text'], 'lauren') || strpos($_POST['text'], 'Lauren')){
 }
 
 function send($text){
-
-//    // use key 'http' even if you send the request to https://...
-//    $options = array(
-//        'http' => array(
-//            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-//            'method'  => 'POST',
-//            'content' => http_build_query($data)
-//        )
-//    );
-
-
     // where are we posting to?
     $url = 'https://api.groupme.com/v3/bots/post';
 
