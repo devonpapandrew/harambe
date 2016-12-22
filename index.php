@@ -28,18 +28,16 @@ if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
     exit;
 }
 
-send(strpos($inputMsg['text'], 'moon'));
-
-if(strpos($inputMsg['name'], 'Marcus') || strpos($inputMsg['name'], 'marcus')){
+if(strpos($inputMsg['name'], 'Marcus') >= 0 || strpos($inputMsg['name'], 'marcus') >= 0 ){
     send('SHUT UP MARCUS');
 }
 
-if(strpos($inputMsg['text'], 'moon') || strpos($inputMsg['text'], 'lunar')){
+if(strpos($inputMsg['text'], 'moon') >= 0 || strpos($inputMsg['text'], 'lunar') >= 0 ){
     $text = "That's one small step for man, one giant leap for mankind.";
     send($text);
 }
 
-if(strpos($inputMsg['text'], 'lauren') || strpos($_POST['text'], 'Lauren')){
+if(strpos($inputMsg['text'], 'lauren') >= 0 || strpos($_POST['text'], 'Lauren') >= 0 ){
     $text = "smh lauren lol";
     send($text);
 }
