@@ -22,3 +22,4 @@ $shitDevonSays[] = "Let's Make America Great Again";
 $shitDevonSays[] = "Bears. Beets. Battlestar Galactica";
 $shitDevonSays[] = "Alexa, order me a pizza.";
 $shitDevonSays[] = "Harambe, what do you think about Lauren?";
+$shitDevonSays[] = "I'm slowly working on automating all of my friendships.";
