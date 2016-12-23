@@ -44,6 +44,12 @@ if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
 }
 
 
+if(!(strpos($inputMsg['text'], 'love harambe') === false)){
+    send("I love you too, {$inputMsg['name']}.");
+    exit;
+}
+
+
 
 //if bitch-ass Marcus says anything
 if(intval($inputMsg['sender_id']) == 7648679 || !(strpos($inputMsg['name'], 'Marcus') === false) || !(strpos($inputMsg['name'], 'marcus') === false)){
