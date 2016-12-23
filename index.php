@@ -1,6 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 
+require_once 'HannahBot.php';
+
 //grab the POSTed input msg
 $inputMsg = json_decode(file_get_contents('php://input'), true);
 
@@ -24,6 +26,18 @@ $inputMsg = json_decode(file_get_contents('php://input'), true);
 */
 
 
+//TODO: something better with this
+mail('devon.papandrew@gmail.com', 'Bot ID' , $inputMsg['sender_id']);
+
+
+//Kill the process if the last msg sent was from this bot
+//Lol this got us in an infinite loop
+if(!(intval($inputMsg['sender_id'] == 0))){//hannahbot sender id
+    $deck = shuffle($shitHannahSays);
+    send($deck[0]);
+}
+
+
 //Kill the process if the last msg sent was from this bot
 //Lol this got us in an infinite loop
 if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
@@ -34,13 +48,20 @@ if($inputMsg['sender_id'] == 362006){ //Harambe bot sender id
 
 //if bitch-ass Marcus says anything
 if(intval($inputMsg['sender_id']) == 7648679 || !(strpos($inputMsg['name'], 'Marcus') === false) || !(strpos($inputMsg['name'], 'marcus') === false)){
-    send('SHUT UP MARCUS');
+    $rand = rand(0,100);
+    if($rand <= 20){
+        send('SHUT UP MARCUS');
+    }
+
 }
 
 //if anyone mentions the iShana, Ishana, or ishana
 if(!(strpos($inputMsg['text'], 'iShana') === false) || !(strpos($inputMsg['text'], 'Ishana') === false)  || !(strpos($inputMsg['text'], 'ishana') === false)){
-    $text = "Get it Rohan!";
-    send($text);
+    $rand = rand(0,100);
+    if($rand <= 50){
+        send("Woaahhhhhh nelly! Rohan, ALL ABOARRRRRD the motorboat tonight.");
+    }
+
 }
 
 //if anyone mentions the moon or lunar
@@ -65,7 +86,11 @@ if(!(strpos($inputMsg['text'], 'weather') === false) || !(strpos($inputMsg['text
 
 //if anyone mentions harambe or Harambe
 if(!(strpos($inputMsg['text'], 'harambe') === false) || !(strpos($inputMsg['text'], 'Harambe') === false)){
-    send("Now that is a name I've not heard in a long, long time.");
+    $rand = rand(0,100);
+    if($rand <= 30){
+        send("Now that is a name I've not heard in a long, long time.");
+    }
+
     exit;
 }
 
@@ -76,19 +101,19 @@ if(!(strpos($inputMsg['text'], 'mars') === false) || !(strpos($inputMsg['text'],
 }
 
 $rand = rand(0,100);
-if($rand <+ 10){
+if($rand <= 10){
     send("If you strike me down, I will become more powerful than you can possibly imagine.");
 }
 /**
  * Sends the $text to the group as Harambe
  * @param $text
  */
-function send($text){
+function send($text, $botID = '632b0904bc8e683dd3518e6444'){
     // where are we posting to?
     $url = 'https://api.groupme.com/v3/bots/post';
 
     // what post fields?
-    $fields = array('text' => $text, 'bot_id' => '632b0904bc8e683dd3518e6444');
+    $fields = array('text' => $text, 'bot_id' => $botID);
 
     // build the urlencoded data
     $postvars = http_build_query($fields);
