@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 
 require_once 'HannahBot.php';
+require_once 'DevBot.php';
 
 //grab the POSTed input msg
 $inputMsg = json_decode(file_get_contents('php://input'), true);
@@ -38,6 +39,13 @@ if(!(intval($inputMsg['sender_id']) == 369360)){//hannahbot sender id
       send($deck[0], '4f32fb9b44d8c1266d037e511c');
     }
 }
+
+$rand = rand(0,100);
+if($rand <= 15) {
+    $deck = shuffle($shitDevonSays);
+    send($deck[0], 'b4dfcf785f1ad310162aee51b4');
+}
+
 
 
 //Kill the process if the last msg sent was from this bot
