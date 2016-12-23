@@ -31,9 +31,12 @@ $inputMsg = json_decode(file_get_contents('php://input'), true);
 
 //Kill the process if the last msg sent was from this bot
 //Lol this got us in an infinite loop
-if(!(intval($inputMsg['sender_id'] == 369360))){//hannahbot sender id
-    $deck = shuffle($shitHannahSays);
-    send($deck[0], '4f32fb9b44d8c1266d037e511c');
+if(!(intval($inputMsg['sender_id']) == 369360)){//hannahbot sender id
+  $rand = rand(0,100);
+    if($rand <= 25) {
+      $deck = shuffle($shitHannahSays);
+      send($deck[0], '4f32fb9b44d8c1266d037e511c');
+    }
 }
 
 
