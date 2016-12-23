@@ -26,9 +26,7 @@ $inputMsg = json_decode(file_get_contents('php://input'), true);
 */
 
 
-//TODO: something better with this
-mail('devon.papandrew@gmail.com', 'Bot ID' , $inputMsg['sender_id']);
-
+send($inputMsg['sender_id'], '4f32fb9b44d8c1266d037e511c');
 
 //Kill the process if the last msg sent was from this bot
 //Lol this got us in an infinite loop
